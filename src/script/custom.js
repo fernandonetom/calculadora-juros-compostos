@@ -58,10 +58,14 @@ $(document).ready(function () {
 
     let sum = valor;
     let lucro = [];
+    let percent = [];
     const values = days.map(() => {
       const result = (sum * juros).toFixed(2);
       sum = result;
-      lucro.push((result - valor).toFixed(2));
+      const lucroAtual = (result - valor).toFixed(2);
+      lucro.push(lucroAtual);
+      const percentLucro = ((lucroAtual / valor) * 100).toFixed(2);
+      percent.push(percentLucro);
       return result;
     });
 
@@ -86,6 +90,13 @@ $(document).ready(function () {
             data: lucro,
             backgroundColor: 'rgb(54, 162, 235)',
             borderColor: 'rgb(54, 162, 235)',
+            fill: false,
+          },
+          {
+            label: '% de lucro composto',
+            data: percent,
+            backgroundColor: 'rgb(153, 102, 255)',
+            borderColor: 'rgb(153, 102, 255)',
             fill: false,
           },
         ],
