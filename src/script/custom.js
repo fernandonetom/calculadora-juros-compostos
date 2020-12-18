@@ -15,14 +15,14 @@ $(document).ready(function () {
 
     const valueInput = document
       .getElementById('valor-inicial')
-      .value.replace('.', ',')
+      .value.replace('.', '')
       .replace(',', '.');
 
     if (valueInput.trim() === '' || valueInput === '0' || valueInput === '0.00')
       return alert('Preencha o valor');
     const jurosInput = document
       .getElementById('juros-dia')
-      .value.replace('.', ',')
+      .value.replace('.', '')
       .replace(',', '.');
 
     if (jurosInput.trim() === '' || jurosInput === '0' || jurosInput === '0.00')
@@ -31,14 +31,14 @@ $(document).ready(function () {
     const valor = parseFloat(
       document
         .getElementById('valor-inicial')
-        .value.replace('.', ',')
+        .value.replace('.', '')
         .replace(',', '.')
     );
     const juros =
       parseFloat(
         document
           .getElementById('juros-dia')
-          .value.replace('.', ',')
+          .value.replace('.', '')
           .replace(',', '.')
       ) /
         100 +
@@ -157,14 +157,16 @@ $(document).ready(function () {
       days[days.length - 1]
     }`;
 
-    document.getElementById('result-percent').innerHTML = `Evolução: ${
-      (values[values.length - 1] / valor).toFixed(2) * 100
-    }%`;
+    document.getElementById('result-percent').innerHTML = `Evolução: ${(
+      (values[values.length - 1] / valor) *
+      100
+    ).toFixed(2)}%`;
 
     document.getElementById(
       'result-lucro-percent'
-    ).innerHTML = `Evolução do lucro: ${
-      (lucro[lucro.length - 1] / valor).toFixed(2) * 100
-    }%`;
+    ).innerHTML = `Evolução do lucro: ${(
+      (lucro[lucro.length - 1] / valor) *
+      100
+    ).toFixed(2)}%`;
   });
 });
