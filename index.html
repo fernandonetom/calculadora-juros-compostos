@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="src/style/bootstrap.css" />
+
+    <title>Calculadora de juros compostos</title>
+    <style>
+      /* Sticky footer styles
+      -------------------------------------------------- */
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+      body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        line-height: 60px; /* Vertically center the text there */
+        background-color: #f5f5f5;
+      }
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      body > .container {
+        padding: 60px 15px 0;
+      }
+
+      .footer > .container {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      code {
+        font-size: 80%;
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <span class="navbar-brand">Calculadora de juros compostos</span>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <div class="row py-5">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <h5 class="card-header">Configurações</h5>
+            <div class="card-body">
+              <form id="form">
+                <div class="form-group">
+                  <label for="valor-inicial">Valor inicial</label>
+                  <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">R$</div>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="valor-inicial"
+                      placeholder="200,00"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="juros-dia">Juros ao dia</label>
+                  <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">%</div>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="2,00"
+                      id="juros-dia"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="dias">Quantos dias</label>
+                  <input
+                    type="number"
+                    min="1"
+                    class="form-control"
+                    id="dias"
+                    placeholder="1"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Calcular</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="card">
+            <h5 class="card-header">Resultado</h5>
+            <div class="card-body"></div>
+            <canvas id="resultado"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Feito por Fernando Neto</span>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="src/script/jquery.min.js"></script>
+    <script src="src/script/popper.min.js"></script>
+    <script src="src/script/bootstrap.min.js"></script>
+    <script src="src/script/mask.min.js"></script>
+    <!-- <script src="src/script/chart.min.js"></script> -->
+    <script src="src/script/custom.js"></script>
+  </body>
+</html>
