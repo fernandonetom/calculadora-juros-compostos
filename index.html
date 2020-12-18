@@ -118,8 +118,26 @@
         <div class="col-12 col-md-8">
           <div class="card">
             <h5 class="card-header">Resultado</h5>
-            <div class="card-body"></div>
-            <canvas id="resultado"></canvas>
+            <div class="card-body">
+              <div class="alert alert-success" role="alert" id="alert">
+                <h4 class="alert-heading">Sem bem-vindo!</h4>
+                <p>
+                  Para utilizar a calculadora, preencha os valores e clique em
+                  calcular.
+                </p>
+                <hr />
+                <p class="mb-0">Compartilhe com seus amigos :)</p>
+              </div>
+              <canvas id="resultado"></canvas>
+              <ul class="list-group list-group-flush d-none" id="result-list">
+                <li id="result-inicio" class="list-group-item"></li>
+                <li id="result-fim" class="list-group-item"></li>
+                <li id="result-lucro" class="list-group-item"></li>
+                <li id="result-dias" class="list-group-item"></li>
+                <li id="result-percent" class="list-group-item"></li>
+                <li id="result-lucro-percent" class="list-group-item"></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

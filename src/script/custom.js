@@ -65,7 +65,8 @@ $(document).ready(function () {
       return result;
     });
 
-    console.log(days, values, lucro);
+    document.getElementById('alert').classList.add('d-none');
+
     var ctx = document.getElementById('resultado').getContext('2d');
     if (myChart.destroy) myChart.destroy();
     myChart = new Chart(ctx, {
@@ -124,5 +125,35 @@ $(document).ready(function () {
         },
       },
     });
+
+    document.getElementById('result-list').classList.remove('d-none');
+    document.getElementById(
+      'result-inicio'
+    ).innerHTML = `Banca inicial: R$${valor.toLocaleString('pt-br', {
+      minimumFractionDigits: 2,
+    })}`;
+    document.getElementById(
+      'result-fim'
+    ).innerHTML = `Banca final: R$${parseFloat(
+      values[values.length - 1]
+    ).toLocaleString('pt-br', { minimumFractionDigits: 2 })}`;
+
+    document.getElementById('result-lucro').innerHTML = `Lucro: R$${parseFloat(
+      lucro[lucro.length - 1]
+    ).toLocaleString('pt-br', { minimumFractionDigits: 2 })}`;
+
+    document.getElementById('result-dias').innerHTML = `Dias corridos: ${
+      days[days.length - 1]
+    }`;
+
+    document.getElementById('result-percent').innerHTML = `Evolução: ${
+      (values[values.length - 1] / valor).toFixed(2) * 100
+    }%`;
+
+    document.getElementById(
+      'result-lucro-percent'
+    ).innerHTML = `Evolução do lucro: ${
+      (lucro[lucro.length - 1] / valor).toFixed(2) * 100
+    }%`;
   });
 });
